@@ -8,5 +8,12 @@ package economy;
  */
 
 public class ResourceManager {
-
+	private int minerals;
+	private int gas;
+	private int currentSupply;
+	private int maxSupply;
+	
+	public ResourceManager() {
+		
+	}
 }

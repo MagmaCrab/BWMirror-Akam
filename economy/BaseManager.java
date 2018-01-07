@@ -80,13 +80,6 @@ public class BaseManager implements Manager{
 				headquarter.getX() - 20, 
 				headquarter.getY() - 100, 
 				"workers: " + workers.size() + "/" + maxWorkers);
-		
-		for(Unit mineral : minerals) {
-			Bot.game.drawTextMap(
-					mineral.getX() - 10, 
-					mineral.getY() - 10, 
-					"" + mineral.getResources());
-		}
 	}
 	
 	public void findResources() {

@@ -52,32 +52,11 @@ public class Bot extends DefaultBWListener {
 
     @Override
     public void onFrame() {
-    	// Draw Screen
     	managers.forEach(m -> m.draw());
-    	
-    	// Update managers
     	managers.forEach(m -> m.onFrame());
     	
     	game.drawTextScreen(10, 230, self.supplyUsed()/2 + "/" + self.supplyTotal()/2);
         game.drawTextScreen(10, 10, "Playing as " + self.getName() + " - " + self.getRace());
-
-//        for (Unit myUnit : self.getUnits()) {
-//            if (myUnit.getType().isWorker() && myUnit.isIdle()) {
-//                Unit closestMineral = null;
-//
-//                for (Unit neutralUnit : game.neutral().getUnits()) {
-//                    if (neutralUnit.getType().isMineralField()) {
-//                        if (closestMineral == null || myUnit.getDistance(neutralUnit) < myUnit.getDistance(closestMineral)) {
-//                            closestMineral = neutralUnit;
-//                        }
-//                    }
-//                }
-//
-//                if (closestMineral != null) {
-//                    myUnit.gather(closestMineral, false);
-//                }
-//            }
-//		 }
         
         //if we're running out of supply and have enough minerals ...
         if (self.minerals() >= 150) {
